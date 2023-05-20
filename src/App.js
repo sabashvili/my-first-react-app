@@ -1,4 +1,5 @@
-import ItemsList from "./components/ItemsList";
+import ItemsList from "./components/currentList/ItemsList";
+import NewItem from "./components/newList/newItem";
 
 function App() {
   const expenses = [
@@ -23,8 +24,13 @@ function App() {
     },
   ];
 
+  const addExpenseHandler = (expense) => {
+    console.log(expense, "app");
+  };
+
   return (
     <div>
+      <NewItem onAddExpense={addExpenseHandler} />
       <ItemsList ItemsAbout={expenses} />
     </div>
   );
